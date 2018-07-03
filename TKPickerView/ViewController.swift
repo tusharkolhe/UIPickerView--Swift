@@ -15,6 +15,8 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     
 
     @IBOutlet weak var selectedTextLabel: UILabel!
+    
+    @IBOutlet var btnSelectionLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     
     var pickerData: [String] = [String]()
@@ -49,6 +51,11 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
         selectedTextLabel.text = valueSelected
     }
 
+    @IBAction func selectBtn(_ sender: Any) {
+        let selectedValue = pickerData[pickerView.selectedRow(inComponent: 0)]
+        
+        btnSelectionLabel.text = selectedValue
+    }
     
 
    
